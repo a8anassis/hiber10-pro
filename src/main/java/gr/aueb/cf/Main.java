@@ -17,11 +17,15 @@ public class Main {
         try {
             tx.begin();
 
-            Course java = em.find(Course.class, 1L);
-            Teacher alice = em.find(Teacher.class, 1L);
 
-            alice.removeCourse(java);
-            em.remove(java);
+
+            tx.commit();
+
+//            Course java = em.find(Course.class, 1L);
+//            Teacher alice = em.find(Teacher.class, 1L);
+//
+//            alice.removeCourse(java);
+//            em.remove(java);
 
 //            Teacher alice = em.find(Teacher.class, 1L);
 //            Course java = new Course("Java");
@@ -34,7 +38,7 @@ public class Main {
 //            Teacher alice = new Teacher("Alice", "Smith");
 //            em.persist(alice);
 
-            tx.commit();
+
         } catch (RuntimeException e) {
             if (tx.isActive()) tx.rollback();
             throw e;
