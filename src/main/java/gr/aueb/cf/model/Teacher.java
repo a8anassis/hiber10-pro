@@ -7,11 +7,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @NoArgsConstructor
-//@AllArgsConstructor
 @Getter
 @Setter
+@Entity
 @Table(name = "teachers")
 public class Teacher {
 
