@@ -21,20 +21,23 @@ public class Main {
 
             tx.commit();
 
+//            REMOVE ======================
 //            Course java = em.find(Course.class, 1L);
 //            Teacher alice = em.find(Teacher.class, 1L);
 //
 //            alice.removeCourse(java);
 //            em.remove(java);
 
-//            Teacher alice = em.find(Teacher.class, 1L);
+//            MERGE =====================
+//            Teacher alice = em.find(Teacher.class, 1L);   fetched and managed
 //            Course java = new Course("Java");
 //            alice.addCourse(java);
 //            alice.setLastname("Wonderland");
 //
 //            em.persist(java);
-            // em.merge(alice);  dirty checking
+            // em.merge(alice);  dirty checking - checks for updates
 
+//            PERSIST   ===================
 //            Teacher alice = new Teacher("Alice", "Smith");
 //            em.persist(alice);
 
