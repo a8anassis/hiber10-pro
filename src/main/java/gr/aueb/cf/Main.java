@@ -67,7 +67,9 @@ public class Main {
 
             // Select teachers and their courses
             // EAGER FETCH
-            String query8 = "SELECT t, c FROM Teacher t LEFT JOIN FETCH t.courses c";
+            String query8 = "SELECT t FROM Teacher t LEFT JOIN FETCH t.courses";
+            List<Teacher> teachers8 = em.createQuery(query8, Teacher.class).getResultList();
+            teachers8.forEach(t -> System.out.println(t + " " + t.getAllCourses()));
 
             // Native Query
 //            String query9 = "SELECT * FROM teachers";
@@ -106,3 +108,4 @@ public class Main {
         }
     }
 }
+
