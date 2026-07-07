@@ -61,18 +61,18 @@ public class Main {
 //            }
 
             // Select teachers that do not teach any course
-            String query7 = "SELECT t FROM Teacher t LEFT JOIN t.courses c WHERE c.id IS NULL";
-            List<Teacher> teachers7 = em.createQuery(query7, Teacher.class).getResultList();
-            teachers7.forEach(System.out::println);
+//            String query7 = "SELECT t FROM Teacher t LEFT JOIN t.courses c WHERE c.id IS NULL";
+//            List<Teacher> teachers7 = em.createQuery(query7, Teacher.class).getResultList();
+//            teachers7.forEach(System.out::println);
 
             // Select teachers and their courses
             // EAGER FETCH
             String query8 = "SELECT t, c FROM Teacher t LEFT JOIN FETCH t.courses c";
 
             // Native Query
-            String query9 = "SELECT * FROM teachers";
-            var teachers9 = em.createNativeQuery(query9, Teacher.class).getResultList();
-            teachers9.forEach(System.out::println);
+//            String query9 = "SELECT * FROM teachers";
+//            var teachers9 = em.createNativeQuery(query9, Teacher.class).getResultList();
+//            teachers9.forEach(System.out::println);
 
             tx.commit();
 
