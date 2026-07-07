@@ -97,7 +97,7 @@ public class Main {
             CriteriaQuery<Teacher> cq = cb.createQuery(Teacher.class);
             Root<Teacher> t = cq.from(Teacher.class);
             Join<Teacher, Course> courses = t.join("courses");
-//            cq.multiselect(t, cb.count(courses)).groupBy(t);
+//            cq.multiselect(t, cb.count(courses)).groupBy(t).orderBy(cb.desc(cb.count(courses)));
             cq.multiselect(t, cb.count(courses)).groupBy(t).having(cb.gt(cb.count(courses), 2L));
 
 
